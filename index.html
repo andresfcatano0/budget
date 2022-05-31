@@ -7,7 +7,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
  <!-- CSS -->
-  <link rel="stylesheet" href="BudgetApp.css">
+  <link rel="stylesheet" href="style.css">
  <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/8fd49e77ce.js" crossorigin="anonymous"></script>
 </head>
@@ -18,29 +18,29 @@
 <section class="container">
   <div class="row justify-content-center ">
 
-        <div class="col-6">
-          <form id="budgetForm">
-            <div class="form-group">
-              <label for="budgetAmount">Enter budget</label>
-              <input type="text" class="form-control" id="budgetAmount">
-            </div>
-            <button id="bSubmit" type="submit" class="btn btn-primary">Submit</button>
-          </form>
+    <div class="col-12 col-md-6">
+      <form id="budgetForm">
+        <div class="mb-3">
+          <label for="budgetAmount" class="form-label">Enter budget</label>
+          <input type="text" class="form-control" id="budgetAmount">
         </div>
+        <button id="bSubmit" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
 
-        <div class="col-6">
-          <form id="expenseForm">
-            <div class="form-group">
-              <label for="expenseName">Enter expense name</label>
-              <input type="text" class="form-control" id="expenseName">
-            </div>
-            <div class="form-group">
-              <label for="expenseAmount">Enter expense amount</label>
-              <input type="text" class="form-control" id="expenseAmount">
-            </div>
-            <button id="eSubmit" type="submit" class="btn btn-primary ">Submit</button>
-          </form>
+    <div class="col-12 col-md-6">
+      <form id="expenseForm">
+        <div class="mb-3">
+          <label for="expenseName" class="form-label">Enter expense name</label>
+          <input type="text" class="form-control" id="expenseName">
         </div>
+        <div class="mb-3">
+          <label for="expenseAmount" class="form-label">Enter expense amount</label>
+          <input type="text" class="form-control" id="expenseAmount">
+        </div>
+        <button id="eSubmit" type="submit" class="btn btn-primary ">Submit</button>
+      </form>
+    </div>
 
   </div>
 </section>
@@ -68,7 +68,7 @@
       </div>
 
       <div class="row justify-content-center">
-        <div class="col-9">
+        <div class="col-8">
           <table class="table">
             <thead>
               <tr>
@@ -85,20 +85,6 @@
 
   </div>
 </section>
-
-
-<!-- <div class="container">
-  <div class="row">
-    <div style="border-style: solid;" class="col-sm-8">col-sm-8</div>
-    <div style="border-style: solid;" class="col-sm-4">col-sm-4</div>
-  </div>
-  <div class="row" style="border-style: solid;">
-    <div style="border-style: solid;" class="col-9 col-md-2">col-sm</div>
-    <div style="border-style: solid;" class="col-9 col-md-2">col-sm</div>
-    <div style="border-style: solid;" class="col-9 col-md-2">col-sm</div>
-  </div>
-</div> -->
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <!-- Optional JavaScript -->

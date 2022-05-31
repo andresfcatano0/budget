@@ -1,0 +1,68 @@
+body {
+	background-color: #80808029;
+}
+
+.h1 {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	color: black;
+}
+
+#budgetForm {
+	padding: 15px;
+	margin-bottom: 10px;
+	border: green solid 2px;
+}
+
+#expenseForm {
+	padding: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: red solid 2px;
+}
+
+#creditAmount {
+	color: red;
+}
+
+#dollarAmount{
+	color: green;
+}
+
+i {
+	font-size: 60px;
+}
+
+h3 {
+	font-size: 25px;
+}
+
+p {
+	font-size: 25px;
+}
+
+#bSubmit {
+	border-color: green;
+	background-color: transparent;
+	outline: none;
+	color: green;
+	font-size: 20px;
+}
+
+#eSubmit {
+	border-color: red;
+	background-color: transparent;
+	outline: none;
+	color: red;
+	font-size: 20px;
+}
+
+#budgetAmount {
+	border-color: green;
+	font-size: 20px;
+}
+
+#expenseName, #expenseAmount {
+	border-color: red;
+	font-size: 20px;
+}
