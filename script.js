@@ -1,11 +1,13 @@
 var budgetAmount = document.querySelector("#budgetAmount");
 var expenseAmount = document.querySelector("#expenseAmount");
+var expenseName = document.querySelector("#expenseName");
 var dollarAmount = document.querySelector("#dollarAmount");
 var creditAmount = document.querySelector("#creditAmount");
 var balanceAmount = document.querySelector("#balanceAmount");
 var bSubmit = document.querySelector("#bSubmit");
 var eSubmit = document.querySelector("#eSubmit");
 var balance = 0;
+let tbody = document.querySelector("tbody");
 
 bSubmit.addEventListener("click", function(event){
 	dollarAmount.textContent = "$" + Number(budgetAmount.value); 
@@ -21,6 +23,7 @@ eSubmit.addEventListener("click", function(event){
 	balanceAmount.textContent = "$" + balance;
 	color();
 	event.preventDefault();
+	filltable()
 });
 
 function color(){
@@ -33,12 +36,13 @@ function color(){
 	}
 }
 
+function filltable(){
+	let name = expenseName.value;
+	let expense = expenseAmount.value;
+	let tr = document.createElement("tr");
+	tr.innerHTML = (`<td>${name}</td><td>${expense}</td><i class="fas fa-trash-alt"></i>`);
+	tbody.appendChild(tr);
+}
 
-$("#eSubmit").on("click", function(){
-	var expense = $("#expenseName").val();
-	var amount = $("#expenseAmount").val();
-	$("#expenseName").val("");
-	$("#expenseAmount").val("");
-	$('tbody').append('<tr><td>' + expense + '</td><td> $' + amount + '</td></tr>')
-	return false;
-});
+
+

@@ -28,8 +28,12 @@ body {
 	color: green;
 }
 
-i {
+#kkk {
 	font-size: 60px;
+}
+
+#fa-trash-alt{
+	font-size: 10px;
 }
 
 h3 {
