@@ -1,32 +1,42 @@
-var budgetAmount = document.querySelector("#budgetAmount");
-var expenseAmount = document.querySelector("#expenseAmount");
-var expenseName = document.querySelector("#expenseName");
-var dollarAmount = document.querySelector("#dollarAmount");
-var creditAmount = document.querySelector("#creditAmount");
-var balanceAmount = document.querySelector("#balanceAmount");
-var bSubmit = document.querySelector("#bSubmit");
-var eSubmit = document.querySelector("#eSubmit");
-var balance = 0;
+let budgetAmount = document.querySelector("#budgetAmount"); //budgetForm
+let expenseName = document.querySelector("#expenseName"); //expenseForm
+let expenseAmount = document.querySelector("#expenseAmount"); //expenseForm
+let bSubmit = document.querySelector("#bSubmit"); //budgetForm button
+let eSubmit = document.querySelector("#eSubmit"); //expenseForm button
+let moneyIn = document.querySelector("#moneyIn"); 
+let moneyOut = document.querySelector("#moneyOut");
+let balanceAmount = document.querySelector("#balanceAmount");
+let balance = 0;
+let totalExpenses = 0;
 let tbody = document.querySelector("tbody");
 
-bSubmit.addEventListener("click", function(event){
-	dollarAmount.textContent = "$" + Number(budgetAmount.value); 
+
+let expenseList = {};
+
+
+bSubmit.addEventListener("click", function(){
+	moneyIn.textContent = "$" + Number(budgetAmount.value); 
 	balance += Number(budgetAmount.value);
 	balanceAmount.textContent = "$" + balance;
 	color();
+	// event.preventDefault() will prevent form from submitting.
 	event.preventDefault();
 });
 
-eSubmit.addEventListener("click", function(event){
-	creditAmount.textContent = "$" + Number(expenseAmount.value); 
+eSubmit.addEventListener("click", function(){
+	totalExpenses += Number(expenseAmount.value)
+	moneyOut.textContent = "$" + totalExpenses; 
 	balance -= Number(expenseAmount.value);
 	balanceAmount.textContent = "$" + balance;
 	color();
+	filltable();
 	event.preventDefault();
-	filltable()
+
+	//Adds keys and values to the expenseList object
+	expenseList[expenseName.value] = expenseAmount.value
 });
 
-function color(){
+const color = () => {
 	if(balance === 0){
 	balanceAmount.style.color = "black";
 	} else if(balance > 0){
@@ -36,7 +46,7 @@ function color(){
 	}
 }
 
-function filltable(){
+const filltable = () => {
 	let name = expenseName.value;
 	let expense = expenseAmount.value;
 	let tr = document.createElement("tr");
@@ -44,5 +54,24 @@ function filltable(){
 	tbody.appendChild(tr);
 }
 
+const trash = (item) => {
+	//.target in this case "I", refers to the trash can icon.
+	if (item.target.tagName === "I"){
+		item.target.parentElement.remove();
 
+		// console.log(Number(Object.values(expenseList)))
+		// console.log(Object.values(expenseList))
 
+		console.log(expenseList[])
+
+		let num = Number(Object.values(expenseList))
+		totalExpenses -= num;
+		balance += num;
+		moneyOut.textContent = "$" + Number(totalExpenses);
+		balanceAmount.textContent = "$" + Number(balance);
+	}
+}
+
+tbody.addEventListener("click", function(item){
+	trash(item);
+})

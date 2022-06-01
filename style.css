@@ -20,20 +20,20 @@ body {
 	border: red solid 2px;
 }
 
-#creditAmount {
+#moneyOut {
 	color: red;
 }
 
-#dollarAmount{
+#moneyIn{
 	color: green;
 }
 
-#kkk {
+.moneyIcons {
 	font-size: 60px;
 }
 
-#fa-trash-alt{
-	font-size: 10px;
+.fa-trash-alt{
+	font-size: 15px;
 }
 
 h3 {
