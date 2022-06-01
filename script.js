@@ -10,10 +10,6 @@ let balance = 0;
 let totalExpenses = 0;
 let tbody = document.querySelector("tbody");
 
-
-let expenseList = {};
-
-
 bSubmit.addEventListener("click", function(){
 	moneyIn.textContent = "$" + Number(budgetAmount.value); 
 	balance += Number(budgetAmount.value);
@@ -31,9 +27,6 @@ eSubmit.addEventListener("click", function(){
 	color();
 	filltable();
 	event.preventDefault();
-
-	//Adds keys and values to the expenseList object
-	expenseList[expenseName.value] = expenseAmount.value
 });
 
 const color = () => {
@@ -58,13 +51,7 @@ const trash = (item) => {
 	//.target in this case "I", refers to the trash can icon.
 	if (item.target.tagName === "I"){
 		item.target.parentElement.remove();
-
-		// console.log(Number(Object.values(expenseList)))
-		// console.log(Object.values(expenseList))
-
-		console.log(expenseList[])
-
-		let num = Number(Object.values(expenseList))
+		let num = Number(item.target.previousSibling.textContent)
 		totalExpenses -= num;
 		balance += num;
 		moneyOut.textContent = "$" + Number(totalExpenses);
