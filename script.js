@@ -53,6 +53,7 @@ bSubmit.addEventListener("click", function(){
 	event.preventDefault();
 	//Clear budget form after submitting
 	budgetAmount.value = "";
+	bSubmit.disabled = true;
 });
 
 eSubmit.addEventListener("click", function(){
